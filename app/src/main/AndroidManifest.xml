@@ -13,7 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".test.MainActivity">
 
@@ -25,8 +29,9 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
 
                 <data
-                    android:host="main1"
-                    android:scheme="myscheme"/>
+                    android:host="main"
+                    android:scheme="myscheme"
+                    android:path="/mypath"/>
             </intent-filter>
         </activity>
         <activity android:name=".Main2Activity">
@@ -44,10 +49,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".wifi.Main3Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+            <!-- 需要添加下面的intent-filter配置 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="main"
+                    android:scheme="myscheme"
+                    android:path="/mypath1"/>
             </intent-filter>
         </activity>
     </application>
