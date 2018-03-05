@@ -12,4 +12,6 @@ import java.io.Serializable;
  * @function
  */
 
-public class DD  {}
+public class DD implements Serializable {
+    public String name;
+}

@@ -13,9 +13,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.jakewharton.rxbinding2.widget.RxTextView;
+import com.longshihan.rxtest.model.DD;
 
+import org.json.JSONObject;
 import org.reactivestreams.Subscriber;
 
 import java.util.List;
@@ -52,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textview1= (TextView)findViewById(R.id.textview1);
         editText= (EditText)findViewById(R.id.textedit);
+
+        Gson gson=new Gson();
+
+       String s= gson.toJson(new DD());
+        Log.d("ss",s);
         RxView.clicks(textview1)
                 .throttleFirst(1, TimeUnit.SECONDS)
                 .timestamp(TimeUnit.SECONDS)

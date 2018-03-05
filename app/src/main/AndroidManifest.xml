@@ -13,11 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".test.MainActivity">
 
@@ -30,8 +26,8 @@
 
                 <data
                     android:host="main"
-                    android:scheme="myscheme"
-                    android:path="/mypath"/>
+                    android:path="/mypath"
+                    android:scheme="myscheme"/>
             </intent-filter>
         </activity>
         <activity android:name=".Main2Activity">
@@ -59,8 +55,15 @@
 
                 <data
                     android:host="main"
-                    android:scheme="myscheme"
-                    android:path="/mypath1"/>
+                    android:path="/mypath1"
+                    android:scheme="myscheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".layoutmanager.LayoutManagerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>
